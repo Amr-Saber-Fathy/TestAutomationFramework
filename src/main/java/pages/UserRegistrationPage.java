@@ -35,6 +35,12 @@ public class UserRegistrationPage extends PageBase{
 	@FindBy(css = "div.result")
 	public WebElement rigistrationMessage;
 	
+	@FindBy(linkText = "Log out")
+	public WebElement logoutButtonlink;
+	
+	@FindBy(linkText = "My account")
+	public WebElement myAccountButtonlink;
+	
 	public void userRegisteration(String firstName, String lastName, String email, String password) 
 	{
 		clickButton(genderRadiobtn);
@@ -45,5 +51,14 @@ public class UserRegistrationPage extends PageBase{
 		setTextBoxTest(confirmPasswordTextBox, password);
 		clickButton(rigisterButton);
 	}
+	
+	public void logOutUser() 
+	{
+		clickButton(logoutButtonlink);
+	}
 
+	public void openMyAccount() 
+	{
+		clickButton(myAccountButtonlink);
+	}
 }
