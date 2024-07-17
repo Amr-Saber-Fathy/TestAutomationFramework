@@ -16,7 +16,8 @@ public class TestBase {
 
 	public static WebDriver driver;
 	
-	public String email = "test166@gmail.com";
+	
+	public String email = "test150@gmail.com";
 	public String oldPassword = "123456";
 	
 	@BeforeSuite
@@ -56,4 +57,5 @@ public class TestBase {
 			System.out.println("Screenshot has been taken");
 		}
 	}
+	
 }

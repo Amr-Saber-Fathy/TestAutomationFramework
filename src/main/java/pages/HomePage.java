@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,7 @@ public class HomePage extends PageBase{
 
 	public HomePage(WebDriver driver) {
 		super(driver);
-
+		jse = (JavascriptExecutor) driver;
 	}
 
 	@FindBy(linkText = "Register")
@@ -20,6 +21,9 @@ public class HomePage extends PageBase{
 	@FindBy(linkText = "Log out")
 	public WebElement logoutButtonlink;
 	
+	@FindBy(linkText = "Contact us")
+	WebElement contactUsLink;
+	
 	public void openRegistrationPage() 
 	{
 		clickButton(registerButtonlink);
@@ -28,6 +32,12 @@ public class HomePage extends PageBase{
 	public void openLoginPage() 
 	{
 		clickButton(loginButtonlink);
+	}
+	
+	public void openContactUsPage() 
+	{
+		scrollToButtom();
+		clickButton(contactUsLink);
 	}
 	
 }
