@@ -25,9 +25,9 @@ public class SearchBarTest extends TestBase{
 	@Test(priority = 2)
 	public void userCanSearchUsingAutoSuggest() 
 	{
-		//searchBar = new SearchBarObject(driver);
+		searchBar = new SearchBarObject(driver);
 		searchBar.searchForProductWithAutoSuggest("Mac");
-		//productDetailsObject = new ProductDetailsPage(driver);
+		productDetailsObject = new ProductDetailsPage(driver);
 		Assert.assertTrue(productDetailsObject.productLinkTitle.getText().equalsIgnoreCase(productName));
 	}
 }

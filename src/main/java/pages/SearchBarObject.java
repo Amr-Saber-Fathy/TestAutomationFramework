@@ -3,14 +3,20 @@ package pages;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchBarObject extends PageBase{
 
 	public SearchBarObject(WebDriver driver) {
 		super(driver);
+		action = new Actions(driver);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
 	@FindBy(id="small-searchterms")
@@ -40,11 +46,8 @@ public class SearchBarObject extends PageBase{
 	public void searchForProductWithAutoSuggest(String searchtxt) 
 	{
 		setTextBoxTest(searchTextBox, searchtxt);
-		try {
-			Thread.sleep(Duration.ofSeconds(3));
-			clickButton(searchSuggestlist.get(0));
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		action.click(searchTextBox).keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).build().perform();
+		wait.until(ExpectedConditions.elementToBeClickable(searchSuggestlist.get(0)));
+		clickButton(searchSuggestlist.get(0));
 	}
 }
