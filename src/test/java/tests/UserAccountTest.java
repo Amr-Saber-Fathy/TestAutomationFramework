@@ -20,7 +20,7 @@ public class UserAccountTest extends TestBase{
 	UserLoginPage userloginObject;
 	UserAccountPage userAccountObject;
 	
-	String email = "test166@gmail.com";
+	String email = "test151@gmail.com";
 //	String oldPassword = "123456";
 	String newPassword = "12345678";
 	
