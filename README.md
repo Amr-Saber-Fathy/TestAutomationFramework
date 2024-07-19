@@ -1,6 +1,7 @@
 # My First Test Automation Framework
-using Java , Selenium , TestNG , POM
-For "https://demo.nopcommerce.com/" website
+using Java , Selenium , TestNG , POM.
+
+for building Test Automation Framework for "https://demo.nopcommerce.com/" website.
 
 #Framework Page Objects:
 - Home Page
